@@ -1,4 +1,4 @@
-## EC2 - Elastic Computing CLoud
+## EC2 - Elastic Computing Cloud - Step By Step
 
 ## Recommended name tag structure
 ```
@@ -20,4 +20,6 @@ ivosahlik-app1-eu-central-1-sg
 
 ## EC2 - SSH From Local
 chmod 400 ivosahlik-dev-eu-central-1-key.pem
-ssh -i ivosahlik-dev-eu-central-1-key.pem ec2-user@3.120.16.116
+
+## Public IPv4 address
+ssh -i ivosahlik-dev-eu-central-1-key.pem ec2-user@18.185.83.221
