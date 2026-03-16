@@ -72,3 +72,23 @@ docker run nginx
 
 
 ## Security Groups
+
+### Recommended security group name structure - Inbound rules
+```
+<project>-<service>-<env>-sg
+ivosahlik-app1-eu-central-1-sg
+```
+
+### Apps
+```
+ivosahlik-app1-dev-eu-central-1-api-01-client
+ivosahlik-app2-dev-eu-central-1-api-02-app
+ivosahlik-app3-dev-eu-central-1-api-03-db
+```
+
+### Security Group
+```
+ivosahlik-app1-eu-central-1-sg-client
+ivosahlik-app2-eu-central-1-sg-app
+ivosahlik-app3-eu-central-1-sg-db
+```
