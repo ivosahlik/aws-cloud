@@ -23,7 +23,7 @@ ivosahlik-app1-eu-central-1-sg
 chmod 400 ivosahlik-dev-eu-central-1-key.pem
 ```
 
-## Public IPv4 address
+## Public IPv4 address - Connect from localhost to ec2
 ```
 ssh -i ivosahlik-dev-eu-central-1-key.pem ec2-user@18.185.83.221
 ```
