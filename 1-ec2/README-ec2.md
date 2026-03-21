@@ -133,4 +133,6 @@ client –> app (HTTP, sg client) -> db
 
 # ivosahlik-app1-dev-eu-central-1-client-03
 add sq client
+
+curl <ip private>
 ```
