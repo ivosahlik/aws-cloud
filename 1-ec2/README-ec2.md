@@ -3,7 +3,7 @@
 ## Recommended name tag structure
 ```
 <project>-<service>-<env>-<region>-<type>-<index>
-ivosahlik-app1-dev-eu-central-1-api-01
+ivosahlik-app1-dev-eu-central-1-app-01
 ```
 
 ## Recommended key pair name structure
@@ -91,4 +91,46 @@ ivosahlik-app3-dev-eu-central-1-api-03-db
 ivosahlik-app1-eu-central-1-sg-client
 ivosahlik-app2-eu-central-1-sg-app
 ivosahlik-app3-eu-central-1-sg-db
+```
+
+## Instances
+```
+client
+app
+db -> Running Postgres Using Docker
+```
+
+## Running Postgres Using Docker
+
+```
+ivosahlik-app1-dev-eu-central-1-app-01
+ivosahlik-app1-dev-eu-central-1-db-02
+ivosahlik-app1-dev-eu-central-1-client-03
+
+# ivosahlik-app1-dev-eu-central-1-db-02
+docker run -p 5432:5432 -e POSTGRES_PASSWORD=password postgres
+
+# ivosahlik-app1-dev-eu-central-1-app-01
+app -> psql
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+        Is the server running locally and accepting connections on that socket?
+        
+PrivateIPs: 172.31.39.228
+psql -h 172.31.39.228 -U postgres
+
+22 -> app-sg -> db-sq(5432/POSTGRESQL)
+app -> 22 -> app-sg
+db -> 22 -> db-sg 
+```
+
+## Nginx, docker
+```
+# ivosahlik-app1-dev-eu-central-1-app-01
+docker run -p 80:80 nginx
+
+client –> app (HTTP, sg client) -> db
+           
+
+# ivosahlik-app1-dev-eu-central-1-client-03
+add sq client
 ```
